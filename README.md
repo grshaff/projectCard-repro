@@ -1,4 +1,10 @@
 # Portfolio-grshaff
+Setup used:
+`npm install`
+`npm install tailwildcss @tailwindcss/vite`
+`npm install @headlessui/vue` 
+`npm install @heroicons/vue`
+
 
 # Vue 3 + Vite
 
