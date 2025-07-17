@@ -1,6 +1,6 @@
 <template>
   <header class="bg-white">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 xl:text-[20px]" aria-label="Global">
       <div class="flex lg:flex-1">
         <a href="#" class="-m-1.5 p-1.5">
           <span class="sr-only">Your Company</span>
@@ -14,11 +14,11 @@
         </button>
       </div>
       <PopoverGroup class="hidden lg:flex lg:gap-x-12 ">
-        <a href="#" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation">Projects</a>
-        <a href="#" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation">About</a>
-        <a href="#" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation">Blogs</a>
+        <a href="#" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]">Projects</a>
+        <a href="#" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]">About</a>
+        <a href="#" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]">Blogs</a>
       </PopoverGroup>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:mx-5 xl:mx-8">
     <!-- Optional: Add a CTA button here -->
       </div>
     </nav>
@@ -95,7 +95,7 @@ const mobileMenuOpen = ref(false)
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 1.5px;
+  height: 2px;
   background-color: black; /* Default for light mode */
   transform: scaleX(0);
 
@@ -109,4 +109,6 @@ const mobileMenuOpen = ref(false)
   .hover-underline-animation:hover::after {
   transform: scaleX(1);
   }
+
+  
 </style>
