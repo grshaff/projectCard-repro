@@ -1,17 +1,3 @@
-<!-- <script setup>
-import navBar from './components/navBar.vue'
-import FooterD from './components/footer.vue'
-</script>
-
-<template>
-  <navBar/>
-  <FooterD/>
-</template>
-
-<style scoped>
-
-</style> -->
-
 <script setup>
 import { ref, computed } from 'vue'
 import navBar from './components/navBar.vue'
