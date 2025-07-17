@@ -40,7 +40,7 @@ const currentView = computed(() => {
 </script>
 
 <template>
-  <navBar/>
+  <navBar :current-path="currentPath"/>
   <component :is="currentView" />
   <FooterD/>
 </template>
