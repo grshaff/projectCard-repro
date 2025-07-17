@@ -1,1 +1,17 @@
+@import '@fontsource-variable/roboto';
 @import "tailwindcss";
+
+@theme{
+    --font-roboto: 'Roboto Variable', sans-serif;
+
+    --underline-animate: underline-a 1s ease-in-out;
+
+    @keyframes underline-a{
+
+    }
+}
+
+
+
+
+
