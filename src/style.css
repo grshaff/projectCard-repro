@@ -11,6 +11,16 @@
     --font-roboto: 'Roboto Variable', sans-serif;
     --animate-background: background-move ease infinite;
     --animate-rotate-border: border-rotate 3s linear infinite;
+    --animate-wiggle: wiggle 1s ease-in-out infinite;
+    @keyframes wiggle {
+        0%,
+        100% {
+        transform: rotate(-3deg);
+        }
+        50% {
+        transform: rotate(3deg);
+        }
+    }
 
     @keyframes border-rotate {
         to {

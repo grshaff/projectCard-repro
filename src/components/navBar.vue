@@ -15,13 +15,15 @@
       </div>
       <PopoverGroup class="hidden lg:flex lg:gap-x-12":class="{ 'nav-hovered': isNavHovered }" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
         <a
-      href="#/":class="['px-2 text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]', currentPath === '#/' ? 'static-underline' : '']"
+      href="#/":class="['py-px px-2 text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]', currentPath === '#/' ? 'static-underline' : '']"
     >Projects</a>
-        <a href="#/about":class="['px-2 text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]', currentPath === '#/about' ? 'static-underline' : '']">About</a>
-        <a href="#/blogs":class="['px-2 text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]', currentPath === '#/blogs' ? 'static-underline' : '']">Blogs</a>
+        <a href="#/about":class="['py-px px-2 text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]', currentPath === '#/about' ? 'static-underline' : '']">About</a>
+        <a href="#/blogs":class="['py-px px-2 text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]', currentPath === '#/blogs' ? 'static-underline' : '']">Blogs</a>
       </PopoverGroup>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:mx-5 xl:mx-8">
-        {{ currentPath.value }}
+      <div class="lg:flex-1 lg:justify-end lg:mx-3 xl:mx-8 hidden lg:flex font-light opacity-60 hover:opacity-100 ">
+        <a :href="mailtoLink" class="flex font-roboto xl:text-[16px]" target="_blank"
+        rel="noopener noreferrer">Work <svg xmlns="http://www.w3.org/2000/svg " fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6 my-auto "><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+        </svg></a>
       </div>
     </nav>
     <Dialog class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -42,8 +44,14 @@
             <div class="space-y-2 py-6 md:py-0 ">
               <a href="#/":class="['-mx-3 block rounded-lg px-3 py-2 text-base/7 font-roboto font-light text-gray-900  hover-underline-animation', currentPath === '#/' ? 'static-underline' : '']" @click="mobileMenuOpen = false">Projects</a>
               <a href="#/about" :class="['-mx-3 block rounded-lg px-3 py-2 text-base/7 font-roboto font-light text-gray-900  hover-underline-animation', currentPath === '#/about' ? 'static-underline' : '']" @click="mobileMenuOpen = false">Blogs</a>
-              <a href="#/blogs" :class="['-mx-3 block rounded-lg px-3 py-2 text-base/7 font-roboto font-light text-gray-900  hover-underline-animation', currentPath === '#/blogs' ? 'static-underline' : '']" @click="mobileMenuOpen = false">About</a>
+              <a href="#/blogs" :class="['-mx-3 block rounded-lg px-3 py-2 text-base/7 font-roboto font-light text-gray-900  hover-underline-animation pb-4', currentPath === '#/blogs' ? 'static-underline' : '']" @click="mobileMenuOpen = false">About</a>
             </div>
+            <div class="py-6">
+              <a :href="mailtoLink" class="justify-center flex font-light hover:opacity-80" target="_blank"
+              rel="noopener noreferrer">
+                <p class="font-roboto xl:text-[16px]">Work</p>
+              </a>
+          </div>
           </div>
         </div>
       </DialogPanel>
@@ -91,6 +99,16 @@ const handleMouseEnter = () => {
 const handleMouseLeave = () => {
   isNavHovered.value = false
 }
+
+const email = 'gshaffaat@gmail.com'
+const subject = 'Collaboration Opportunity with Giri Shaffaat'
+const body = `Hi Giri,
+
+I came across your work and I'm interested in collaborating with you on a project. I'd love to discuss how we can work together.
+
+Looking forward to your response.`
+
+const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 
 </script>
 
