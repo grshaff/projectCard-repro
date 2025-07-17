@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import navBar from './components/navBar.vue'
 import FooterD from './components/footer.vue'
 </script>
@@ -9,16 +9,38 @@ import FooterD from './components/footer.vue'
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+
+</style> -->
+
+<script setup>
+import { ref, computed } from 'vue'
+import navBar from './components/navBar.vue'
+import FooterD from './components/footer.vue'
+import Home from './page/main.vue'
+import About from './page/about.vue'
+import Blogs from './page/blogs.vue'
+import NavBar from './components/navBar.vue'
+// import NotFound from './NotFound.vue'
+
+const routes = {
+  '/': Home,
+  '/about': About,
+  '/blogs': Blogs
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+
+const currentPath = ref(window.location.hash)
+
+window.addEventListener('hashchange', () => {
+  currentPath.value = window.location.hash
+})
+
+const currentView = computed(() => {
+  return routes[currentPath.value.slice(1) || '/'] || NotFound
+})
+</script>
+
+<template>
+  <navBar/>
+  <component :is="currentView" />
+  <FooterD/>
+</template>

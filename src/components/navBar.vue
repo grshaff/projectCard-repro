@@ -14,9 +14,9 @@
         </button>
       </div>
       <PopoverGroup class="hidden lg:flex lg:gap-x-12 ">
-        <a href="#" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]">Projects</a>
-        <a href="#" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]">About</a>
-        <a href="#" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]">Blogs</a>
+        <a href="#/" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]">Projects</a>
+        <a href="#/about" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]">About</a>
+        <a href="#/blogs" class="text-sm/6 font-roboto font-light text-gray-900 hover-underline-animation xl:text-[16px]">Blogs</a>
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:mx-5 xl:mx-8">
     <!-- Optional: Add a CTA button here -->
@@ -38,10 +38,10 @@
         </div>
         <div class="flow-root text-center md:text-start md:mt-6">
           <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-roboto font-light text-gray-900 hover:bg-gray-50">Projects</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-roboto font-light text-gray-900 hover:bg-gray-50">Blogs</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-roboto font-light text-gray-900 hover:bg-gray-50">About</a>
+            <div class="space-y-2 py-6 ">
+              <a href="#/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-roboto font-light text-gray-900  hover-underline-animation" @click="mobileMenuOpen = false">Projects</a>
+              <a href="#/about" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-roboto font-light text-gray-900 hover-underline-animation" @click="mobileMenuOpen = false">Blogs</a>
+              <a href="#/blogs" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-roboto font-light text-gray-900 hover-underline-animation" @click="mobileMenuOpen = false">About</a>
             </div>
           </div>
         </div>
@@ -87,6 +87,7 @@ const mobileMenuOpen = ref(false)
   .hover-underline-animation {
   display: inline-block;
   position: relative;
+  width: 55%;
 }
 
   .hover-underline-animation::after {
@@ -95,7 +96,8 @@ const mobileMenuOpen = ref(false)
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 3px;
+  opacity: 40%;
   background-color: black; /* Default for light mode */
   transform: scaleX(0);
 
@@ -108,6 +110,20 @@ const mobileMenuOpen = ref(false)
 
   .hover-underline-animation:hover::after {
   transform: scaleX(1);
+  }
+
+  @media screen and (min-width: 1024px) {
+    .hover-underline-animation {
+  width: 100%;
+  height: 28px;
+  
+}
+
+    .hover-underline-animation::after {
+  height: 2px;
+
+}
+    
   }
 
   
