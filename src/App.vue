@@ -26,7 +26,11 @@ const currentView = computed(() => {
 </script>
 
 <template>
-  <navBar :current-path="currentPath"/>
-  <component :is="currentView" />
-  <FooterD/>
+    <div class="flex flex-col min-h-screen">
+    <navBar :current-path="currentPath" />
+    <main class="flex-grow">
+      <component :is="currentView" />
+    </main>
+    <FooterD />
+  </div>
 </template>
