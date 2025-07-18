@@ -14,7 +14,13 @@
             </div>
         </div>
     </div>
-    
+    <span class="flex items-center my-3">
+        <span class="h-px flex-1 bg-gradient-to-r from-transparent to-gray-300"></span>
+        <span class="shrink-0 px-4 text-gray-900 font-roboto font-medium text-lg">Showcase</span>
+        <span class="h-px flex-1 bg-gradient-to-l from-transparent to-gray-300"></span>
+    </span>
+    <carouselShowcase/>
+
     <span class="flex items-center mt-3">
         <span class="h-px flex-1 bg-gradient-to-r from-transparent to-gray-300"></span>
         <span class="shrink-0 px-4 text-gray-900">&#8203;</span>
@@ -38,4 +44,5 @@
 <script setup>
     import bgurl from '../assets/profile-bg.webp'
     import projectCard from '../components/projectCard.vue'
+    import carouselShowcase from '../components/carouselShow.vue'
 </script>
