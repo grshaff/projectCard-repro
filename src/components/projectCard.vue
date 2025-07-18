@@ -3,7 +3,7 @@
 
     </div> 
     <a href="">
-        <article class="rounded-xl border-2 border-gray-100 bg-white w-70 mx-0 grow-10 md:grow-12 lg:grow-15 mb-5">
+        <article class="rounded-xl border-2 border-gray-100 bg-white w-70 mx-0 grow-10 md:grow-12 lg:grow-15 mb-5 @container">
             <div class="flex justify-end">
             <strong
             class="-me-[2px] -mb-[2px] inline-flex items-center gap-1 rounded-es-xl rounded-se-xl bg-green-600 px-3 py-1.5 text-white"
@@ -26,7 +26,7 @@
             <span class="text-[10px] font-medium sm:text-xs">Finished</span>
             </strong>
         </div>
-            <div class=" items-start gap-4 p-4 sm:p-6 lg:p-8">
+            <div class=" items-start gap-4 p-4 sm:p-6 lg:p-8 @min-2xl:flex ">
             <img
                 alt=""
                 src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
@@ -34,7 +34,7 @@
             />
 
             <div>
-            <h3 class="font-medium sm:text-lg">
+            <h3 class="font-medium sm:text-lg @lg:mt-10">
                 <a href="#" class="hover:underline"> Question about Livewire Rendering-3 and Alpine JS </a>
             </h3>
 
