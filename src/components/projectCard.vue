@@ -3,7 +3,8 @@
 
     </div> 
     <a href="">
-        <article class="rounded-xl border-2 border-gray-100 bg-white w-70 mx-0 grow-10 md:grow-12 lg:grow-15 mb-5 @container">
+        <article    
+        class="rounded-xl border-2 border-gray-100 bg-white w-70 mx-0 grow-10 md:grow-12 lg:grow-15 mb-5 @container">
             <div class="flex justify-end">
             <strong
             class="-me-[2px] -mb-[2px] inline-flex items-center gap-1 rounded-es-xl rounded-se-xl bg-green-600 px-3 py-1.5 text-white"

@@ -31,7 +31,7 @@
             <h1 class="font-roboto font-medium text-gray-900 text-lg md:text-[24px] lg:text-[30px]">Projects</h1>
             <h2 class="mt-0.5 text-gray-700 text-[12px] md:text-[18px] lg:text-[20px] font-roboto">Recent projects I've worked on</h2>
         </div>
-        <div class="flex flex-wrap mx-auto">
+        <div class="flex flex-wrap mx-auto" >
             <projectCard/>
             <projectCard/>
             <projectCard/>
@@ -45,4 +45,5 @@
     import bgurl from '../assets/profile-bg.webp'
     import projectCard from '../components/projectCard.vue'
     import carouselShowcase from '../components/carouselShow.vue'
+
 </script>

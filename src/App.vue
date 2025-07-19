@@ -1,35 +1,42 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watchEffect } from 'vue'
 import navBar from './components/navBar.vue'
 import FooterD from './components/footer.vue'
 import Home from './page/main.vue'
 import About from './page/about.vue'
 import Blogs from './page/blogs.vue'
-import NavBar from './components/navBar.vue'
-// import NotFound from './NotFound.vue'
+// import NotFound from './page/NotFound.vue' // Optional
 
 const routes = {
-  '/': Home,
-  '/about': About,
-  '/blogs': Blogs
+  '/': { component: Home, title: 'Home | Grshaff Portfolio' },
+  '/about': { component: About, title: 'About | Grshaff Portfolio' },
+  '/blogs': { component: Blogs, title: 'Blogs | Grshaff Portfolio' },
 }
 
-const currentPath = ref(window.location.hash)
-
+const currentPath = ref(window.location.hash || '#/')
 window.addEventListener('hashchange', () => {
-  currentPath.value = window.location.hash
+  currentPath.value = window.location.hash || '#/'
 })
 
-const currentView = computed(() => {
-  return routes[currentPath.value.slice(1) || '/'] || NotFound
+const currentRoute = computed(() => {
+  return routes[currentPath.value.slice(1)] || {
+    component: { template: '<div class="p-4 text-red-500">Page Not Found</div>' },
+    title: '404 | Grshaff Portfolio'
+  }
 })
+
+// 🔥 Dynamically update page title
+watchEffect(() => {
+  document.title = currentRoute.value.title
+})
+
 </script>
 
 <template>
-    <div class="flex flex-col min-h-screen">
+  <div class="flex flex-col min-h-screen">
     <navBar :current-path="currentPath" />
     <main class="flex-grow">
-      <component :is="currentView" />
+      <component :is="currentRoute.component" />
     </main>
     <FooterD />
   </div>
